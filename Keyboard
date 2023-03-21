@@ -1,0 +1,55 @@
+#Задача: Создать клавиатуру 
+
+
+
+
+#Количество клавиш на клавиатуре
+key_keyboard = int(input('Введите количество клавиш на клавиатуре: '))
+if key_keyboard<1:
+    print('Введите число от 1 до 200.000')
+    
+if key_keyboard>=2*10**5:
+    print('Введите число от 1 до 200.000')
+
+#Символы на клавишах
+while key_keyboard>0:
+    character_id = int(input('Введите символ клавиши: '))
+    if character_id<=0:
+        print('Введите положительное число')
+        break
+    if character_id in list_character_id:
+        print('Введите другое число')
+        break
+    list_character_id.append(character_id)
+    key_keyboard -=1
+    
+    
+#Номер ряда на клавиатуре
+c = len(list_character_id)
+list_row_number = []
+while c>0:
+    row_number = int(input('Введите номер ряда, для каждого символа: '))
+    if row_number<1:
+        print('Введите число от 1 до 200.000')
+    list_row_number.append(row_number)
+    c -=1
+    
+#Количество символов в реферате
+symbols_report = int(input('Введите количество символов в реферате: '))
+if symbols_report<1:
+    print('Введите число от 1 до 200.000')
+if symbols_report>=2*10**5:
+    print('Введите число от 1 до 200.000')
+
+#Символы реферата
+list_report_id = []
+while symbols_report>0:
+    report_id = int(input('Введите символы реферата: '))
+    list_report_id.append(report_id)
+    symbols_report -=1
+
+#Символы реферата проверяют символы на клавишах и сопоставляют их в нужный ряд, если ряд
+#не меняется, то счетчик не прибавляется
+print(list_character_id)
+print(list_row_number)
+print(list_report_id)
